@@ -6,17 +6,33 @@ body {
 }
 
 /* Hero Section */
+/* Hero Section */
+/* Hero Section */
 .hero {
   height: 100vh; /* Full viewport height */
-  background-image: url("confetti.webp"); /* Replace with your hero image URL */
+  background-image: url("images/hero1.webp");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
+
+  /* Flexbox properties for centering */
   display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  text-align: center;
+  justify-content: center; /* Horizontal centering */
+  align-items: center; /* Vertical centering */
   position: relative;
+}
+
+/* Text Container */
+.hero .hero-text {
+  color: white; /* Ensure the text is visible */
+  text-align: center; /* Center the text */
+}
+
+/* Optional styling for hero text */
+.hero .hero-text h1,
+.hero .hero-text p {
+  margin: 0;
+  padding: 0;
 }
 
 /* Overlay effect */
