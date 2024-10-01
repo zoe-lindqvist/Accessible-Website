@@ -1,9 +1,50 @@
-/* Apply the desired font family. If "Mabry Pro" is not available, it falls back to Arial */
-html,
+/* Apply the desired font family. */
 body {
   font-family: "Mabry Pro", Arial, sans-serif;
   margin: 0;
   padding: 0;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh; /* Full viewport height */
+  background-image: url("confetti.webp"); /* Replace with your hero image URL */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+/* Overlay effect */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Adjust the darkness of the overlay */
+  z-index: 1;
+}
+
+/* Hero text styles */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 4rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.5rem;
 }
 
 .grid-container {
@@ -20,10 +61,6 @@ body {
   padding: 20px;
   background-color: #f4f4f4;
   border: 1px solid #ccc;
-}
-
-.header {
-  grid-column: 1 / 4;
 }
 
 .menu {
