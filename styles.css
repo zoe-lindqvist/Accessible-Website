@@ -1,0 +1,39 @@
+/* Apply the desired font family. If "Mabry Pro" is not available, it falls back to Arial */
+html,
+body {
+  font-family: "Mabry Pro", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: 20px;
+}
+
+.header,
+.menu,
+.content,
+.footer {
+  padding: 20px;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+}
+
+.header {
+  grid-column: 1 / 4;
+}
+
+.menu {
+  grid-column: 1 / 2;
+}
+
+.content {
+  grid-column: 2 / 4;
+}
+
+.footer {
+  grid-column: 1 / 4;
+}
