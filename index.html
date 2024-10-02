@@ -7,6 +7,64 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <button class="tickets-btn">Tickets</button>
+    <!-- Header with Icons -->
+    <header class="icon-header">
+      <div class="icon-container">
+        <!-- Language Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path
+            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+          ></path>
+        </svg>
+
+        <!-- Search Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+
+        <!-- Menu Icon -->
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="white"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
       <div class="hero-text">
@@ -20,36 +78,15 @@
     <!-- Exhibitions Section -->
     <section class="exhibitions">
       <h2>Exhibitions</h2>
-      <div class="exhibitions-grid">
-        <div class="exhibit-card" style="background-color: #ff4629">
-          <h3>Livet i Norden</h3>
-          <p>Genom 500 år och fyra årstider</p>
-        </div>
-        <div class="exhibit-card" style="background-color: #aed9e0">
-          <h3>Arctic Life</h3>
-          <p>Livet medan isen smälter</p>
-        </div>
-        <div class="exhibit-card" style="background-color: #001f97">
-          <h3>Tidsvalvet</h3>
-          <p>Gör dig redo för en resa i tiden</p>
-        </div>
-        <div class="exhibit-card" style="background-color: #ffb9ff">
-          <h3>Traditioner</h3>
-          <p>Om årets och livets högtider</p>
-        </div>
-        <div class="exhibit-card" style="background-color: #8c550f">
-          <h3>Lekstugan</h3>
-          <p>Lek livet på landet på 1890-talet</p>
-        </div>
-        <div class="exhibit-card" style="background-color: #fffa00">
-          <h3>Lekstugan</h3>
-          <p>Lek livet på landet på 1890-talet</p>
-        </div>
+      <div class="exhibitions-grid" id="exhibitions-grid">
+        <!-- Cards are injected here via JavaScript -->
       </div>
     </section>
 
     <footer class="footer">
       <p>&copy; 2024 Museum of Color</p>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>
