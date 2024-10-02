@@ -1,4 +1,8 @@
-/* General Styles */
+/* {
+  box-sizing: border-box;
+  outline: 2px solid red;
+}*/
+
 html,
 body {
   font-family: "Arial", sans-serif;
@@ -20,13 +24,13 @@ body {
   position: relative;
   color: white;
   text-align: center;
-  max-width: 100%;
+  max-width: 100%; /* Ensure no overflow */
 }
 
 .hero .hero-text {
   z-index: 2;
-  padding: 0 20px; /* Add padding for responsiveness */
-  max-width: 100%;
+  padding: 0 20px; /* Add padding to make text more responsive */
+  max-width: 100%; /* Ensure no overflow */
 }
 
 .hero::before {
@@ -36,22 +40,23 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6); /* Darker overlay to improve contrast */
+  background: rgba(0, 0, 0, 0.5);
+
   z-index: 1;
 }
 
 .hero h1 {
   font-size: 4rem;
   margin: 0;
-  max-width: 100%;
+  max-width: 100%; /* Ensure no overflow */
 }
 
 .hero p {
   font-size: 1.5rem;
-  max-width: 100%;
+  max-width: 100%; /* Ensure no overflow */
 }
 
-/* Tickets Button */
+/* General Styles for the Tickets Button */
 .tickets-btn {
   position: absolute;
   top: 10px;
@@ -67,16 +72,17 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Hover effect for Tickets Button */
 .tickets-btn:hover {
   background-color: white;
-  color: #ff4629; /* Change text color to orange on hover */
+  color: black;
 }
 
 /* Responsive Styles for smaller screens */
 @media (max-width: 480px) {
   .tickets-btn {
-    padding: 8px 15px; /* Smaller padding */
-    font-size: 0.8rem; /* Smaller font size */
+    padding: 8px 15px; /* Make padding smaller */
+    font-size: 0.8rem; /* Reduce font size */
   }
 
   .hero h1 {
@@ -88,7 +94,7 @@ body {
   }
 
   .exhibitions-grid {
-    grid-template-columns: 1fr; /* One column for small screens */
+    grid-template-columns: 1fr; /* One column on small screens */
   }
 
   .icon-container svg {
@@ -110,7 +116,7 @@ body {
 @media (min-width: 481px) and (max-width: 768px) {
   .tickets-btn {
     padding: 9px 18px; /* Slightly larger padding for tablets */
-    font-size: 0.9rem;
+    font-size: 0.9rem; /* Slightly larger font size */
   }
 
   .hero h1 {
@@ -132,7 +138,7 @@ body {
   top: 10px;
   right: 10px;
   z-index: 3;
-  max-width: 100%;
+  max-width: 100%; /* Ensure no overflow */
 }
 
 .icon-container {
@@ -160,25 +166,31 @@ body {
   font-size: 3.5rem;
   margin-bottom: 30px;
   max-width: 100%;
-  word-wrap: break-word;
-  white-space: nowrap;
-  overflow-x: auto;
+  word-wrap: break-word; /* This ensures text breaks when needed */
+  white-space: nowrap; /* Ensures text doesn't get cut off */
+  overflow-x: auto; /* Adds scroll for smaller screens */
 }
 
+/* Responsive for small screens */
 @media (max-width: 480px) {
   .exhibitions h2 {
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Reduce font size for small screens */
   }
 }
 
 /* Exhibitions Grid */
 .exhibitions-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(
+    3,
+    1fr
+  ); /* Default for large screens - 3 columns */
   gap: 20px;
-  max-width: 100%;
+  max-width: 100%; /* Ensure no overflow */
 }
 
+/* ---------------------------------------------------------- */
+/* Exhibits */
 /* Exhibits */
 .exhibit-card {
   display: flex;
@@ -186,23 +198,46 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  border-radius: 15px;
-  padding: 20px;
-  height: 250px;
+  border-radius: 15px; /* Card's border radius */
+  padding: 40px;
+  height: 350px; /* Adjust height if needed */
   transition: transform 0.3s ease-in-out;
-  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-align: center; /* Center title and description */
 }
 
-.exhibit-card h3 {
-  font-size: 1.5rem;
-  margin-bottom: 10px;
+/* Image inside card */
+.card-image {
+  width: 70%; /* Smaller width so the background is visible */
+  height: 500px; /* Adjust the height */
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px; /* Same border-radius as the card */
+  margin-bottom: 20px;
+  z-index: 2;
 }
 
+/* Title and description */
+.exhibit-card h3,
 .exhibit-card p {
-  font-size: 1rem;
-  margin: 0;
+  z-index: 2; /* Ensures text is above the image */
+  text-align: center;
 }
 
+/* Card hover effect */
+.exhibit-card:hover {
+  transform: scale(1.05);
+}
+
+.exhibit-card h3,
+.exhibit-card p {
+  z-index: 2; /* Ensures text is above the image */
+}
+
+/* Exhibits */
+
+/* Card hover effect */
 .exhibit-card:hover {
   transform: scale(1.05);
 }
@@ -213,5 +248,51 @@ body {
   background-color: #333;
   color: white;
   text-align: center;
-  max-width: 100%;
+  max-width: 100%; /* Ensure no overflow */
+}
+
+/* Responsive Styles */
+
+/* For small screens: 320px to 480px - Show 1 exhibit per row */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .exhibitions-grid {
+    grid-template-columns: 1fr; /* One column on small screens */
+  }
+
+  .icon-container svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .icon-header {
+    top: 5px;
+    right: 5px;
+  }
+
+  .icon-container {
+    gap: 10px;
+  }
+}
+
+/* For tablet screens: 481px to 768px - Show 2 exhibits per row */
+@media (min-width: 481px) and (max-width: 768px) {
+  .hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.3rem;
+  }
+
+  .exhibitions-grid {
+    grid-template-columns: repeat(2, 1fr); /* Two columns on tablet screens */
+  }
 }
