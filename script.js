@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Ocean Depths",
       description: "Colors beneath the sea",
       color: "#ff4629",
-      textColor: "#4B0A23",
+      textColor: "#A5EDF9",
       imageUrl: "images/exhibit1.webp",
     },
     {
