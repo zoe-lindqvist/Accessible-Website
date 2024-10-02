@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
       title: "Livet i Norden",
       description: "Genom 500 år och fyra årstider",
       color: "#ff4629",
-      imageUrl: "images/exhibit2.webp", // Image for this card
+      imageUrl: "images/exhibit1.webp", // Image for this card
     },
     {
       title: "Arctic Life",
