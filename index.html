@@ -7,66 +7,84 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <button class="tickets-btn">Tickets</button>
+    <!-- Accessible Tickets Button -->
+    <button class="tickets-btn" aria-label="Buy tickets">Tickets</button>
+
     <!-- Header with Icons -->
-    <header class="icon-header">
-      <div class="icon-container">
+    <header class="icon-header" aria-label="Main navigation">
+      <div
+        class="icon-container"
+        role="navigation"
+        aria-label="Site navigation"
+      >
         <!-- Language Icon -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <line x1="2" y1="12" x2="22" y2="12"></line>
-          <path
-            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
-          ></path>
-        </svg>
+        <button class="icon-btn" aria-label="Change language">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="12" cy="12" r="10"></circle>
+            <line x1="2" y1="12" x2="22" y2="12"></line>
+            <path
+              d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"
+            ></path>
+          </svg>
+        </button>
 
         <!-- Search Icon -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <circle cx="11" cy="11" r="8"></circle>
-          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-        </svg>
+        <button class="icon-btn" aria-label="Search the site">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+        </button>
 
         <!-- Menu Icon -->
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-        >
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
-        </svg>
+        <button class="icon-btn" aria-label="Open site menu">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="white"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+            focusable="false"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" role="banner" aria-label="Museum introduction">
       <div class="hero-text">
         <h1>Museum of Color</h1>
         <p>
@@ -76,9 +94,9 @@
     </section>
 
     <!-- Exhibitions Section -->
-    <section class="exhibitions">
-      <h2>Exhibitions</h2>
-      <div class="exhibitions-grid" id="exhibitions-grid">
+    <section class="exhibitions" aria-labelledby="exhibitions-heading">
+      <h2 id="exhibitions-heading">Exhibitions</h2>
+      <div class="exhibitions-grid" id="exhibitions-grid" role="list">
         <!-- Cards are injected here via JavaScript -->
       </div>
     </section>

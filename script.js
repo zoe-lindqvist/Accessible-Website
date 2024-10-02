@@ -1,39 +1,45 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const exhibitions = [
     {
-      title: "Livet i Norden",
-      description: "Genom 500 år och fyra årstider",
+      title: "Ocean Depths",
+      description: "Colors beneath the sea",
       color: "#ff4629",
-      imageUrl: "images/exhibit1.webp", // Image for this card
+      textColor: "#4B0A23",
+      imageUrl: "images/exhibit1.webp",
     },
     {
-      title: "Arctic Life",
-      description: "Livet medan isen smälter",
+      title: "Color Through Time",
+      description: "A journey through color in history",
       color: "#98CDB2",
+      textColor: "#1414FF",
       imageUrl: "images/exhibit2.webp",
     },
     {
-      title: "Tidsvalvet",
-      description: "Gör dig redo för en resa i tiden",
+      title: "Northern Spectrum",
+      description: "The magic of the North",
       color: "#001f97",
+      textColor: "#98CDB2", // Add a fallback textColor in case it's missing
       imageUrl: "images/exhibit3.webp",
     },
     {
-      title: "Traditioner",
-      description: "Om årets och livets högtider",
+      title: "Tradition Hues",
+      description: "The meaning of color in global traditions",
       color: "#ffb9ff",
+      textColor: "#8C550F", // Add text color to ensure good contrast
       imageUrl: "images/exhibit4.webp",
     },
     {
-      title: "Lekstugan",
-      description: "Lek livet på landet på 1890-talet",
+      title: "Urban Canvas",
+      description: "How cities use color in design",
       color: "#8c550f",
+      textColor: "#FFB9FF", // Ensure the text is readable on dark background
       imageUrl: "images/exhibit5.webp",
     },
     {
-      title: "Lekstugan",
-      description: "Lek livet på landet på 1890-talet",
+      title: "Nature’s Palette",
+      description: "Colors in nature",
       color: "#fffa00",
+      textColor: "#5A6950",
       imageUrl: "images/exhibit6.webp",
     },
   ];
@@ -45,6 +51,14 @@ document.addEventListener("DOMContentLoaded", function () {
     card.className = "exhibit-card";
     card.style.backgroundColor = exhibit.color;
 
+    // Make the card focusable and give it role="button"
+    card.tabIndex = 0;
+    card.setAttribute("role", "button");
+    card.setAttribute(
+      "aria-label",
+      `${exhibit.title} - ${exhibit.description}`
+    );
+
     // Create image div and set the background image
     const imageDiv = document.createElement("div");
     imageDiv.className = "card-image";
@@ -53,11 +67,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const title = document.createElement("h3");
     title.textContent = exhibit.title;
+    title.style.color = exhibit.textColor; // Set the title text color
     card.appendChild(title);
 
     const description = document.createElement("p");
     description.textContent = exhibit.description;
+    description.style.color = exhibit.textColor; // Set the description text color
     card.appendChild(description);
+
+    // Add event listeners for keyboard interaction
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        // Define what happens on Enter or Space press, like opening a modal
+        event.preventDefault();
+        alert(`You selected ${exhibit.title}`);
+      }
+    });
 
     exhibitionsGrid.appendChild(card);
   });
