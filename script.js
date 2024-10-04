@@ -18,21 +18,21 @@ document.addEventListener("DOMContentLoaded", () => {
       title: "Northern Spectrum",
       description: "The magic of the North",
       color: "#001f97",
-      textColor: "#98CDB2", // Add a fallback textColor in case it's missing
+      textColor: "#98CDB2",
       imageUrl: "images/exhibit3.webp",
     },
     {
       title: "Tradition Hues",
       description: "The meaning of color in global traditions",
       color: "#ffb9ff",
-      textColor: "#8C550F", // Add text color to ensure good contrast
+      textColor: "#8C550F",
       imageUrl: "images/exhibit4.webp",
     },
     {
       title: "Urban Canvas",
       description: "How cities use color in design",
       color: "#8c550f",
-      textColor: "#FFB9FF", // Ensure the text is readable on dark background
+      textColor: "#FFB9FF",
       imageUrl: "images/exhibit5.webp",
     },
     {
@@ -51,9 +51,11 @@ document.addEventListener("DOMContentLoaded", () => {
     card.className = "exhibit-card";
     card.style.backgroundColor = exhibit.color;
 
-    // Make the card focusable and give it role="button"
-    card.tabIndex = 0;
-    card.setAttribute("role", "button");
+    // Add role="listitem" for better ARIA compliance
+    card.setAttribute("role", "listitem");
+    card.tabIndex = 0; // Make the card focusable
+
+    // Set ARIA label for screen readers
     card.setAttribute(
       "aria-label",
       `${exhibit.title} - ${exhibit.description}`
@@ -65,20 +67,21 @@ document.addEventListener("DOMContentLoaded", () => {
     imageDiv.style.backgroundImage = `url(${exhibit.imageUrl})`;
     card.appendChild(imageDiv);
 
+    // Create title and apply text color
     const title = document.createElement("h3");
     title.textContent = exhibit.title;
-    title.style.color = exhibit.textColor; // Set the title text color
+    title.style.color = exhibit.textColor;
     card.appendChild(title);
 
+    // Create description and apply text color
     const description = document.createElement("p");
     description.textContent = exhibit.description;
-    description.style.color = exhibit.textColor; // Set the description text color
+    description.style.color = exhibit.textColor;
     card.appendChild(description);
 
-    // Add event listeners for keyboard interaction
+    // Add event listeners for keyboard interaction (Enter or Space)
     card.addEventListener("keydown", (event) => {
       if (event.key === "Enter" || event.key === " ") {
-        // Define what happens on Enter or Space press, like opening a modal
         event.preventDefault();
         alert(`You selected ${exhibit.title}`);
       }

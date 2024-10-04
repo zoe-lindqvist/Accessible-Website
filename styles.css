@@ -188,7 +188,7 @@ body {
 
 /* Exhibitions Section */
 .exhibitions {
-  padding: 50px;
+  padding: 40px;
   /* background-color: #f9f9f9; */
   text-align: center;
   max-width: 100%;
@@ -221,8 +221,8 @@ body {
   max-width: 100%; /* Ensure no overflow */
 }
 
-/* ---------------------------------------------------------- */
-/* Exhibits */
+/* --------------------------DOUBLE-------------------------------- */
+
 /* Exhibits */
 .exhibit-card {
   display: flex;
@@ -241,7 +241,7 @@ body {
 
 /* Image inside card */
 .card-image {
-  width: 70%; /* Smaller width so the background is visible */
+  width: 100%; /* Smaller width so the background is visible */
   height: 500px; /* Adjust the height */
   background-size: cover;
   background-position: center;
@@ -270,8 +270,9 @@ body {
 }
 /* Focus styles for the cards */
 .exhibit-card:focus {
-  outline: 2px solid black; /* Customize the color */
+  outline: 3px solid black; /* Customize the color */
   outline-offset: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
 
 /* Footer */
@@ -297,20 +298,6 @@ body {
 
   .exhibitions-grid {
     grid-template-columns: 1fr; /* One column on small screens */
-  }
-
-  .icon-container svg {
-    width: 20px;
-    height: 20px;
-  }
-
-  .icon-header {
-    top: 5px;
-    right: 5px;
-  }
-
-  .icon-container {
-    gap: 10px;
   }
 }
 
