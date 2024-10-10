@@ -2,45 +2,45 @@ document.addEventListener("DOMContentLoaded", () => {
   // Array of exhibition data, each object represents an exhibition
   const exhibitions = [
     {
-      title: "Ocean Depths", // The title of the exhibit
-      description: "Colors beneath the sea", // Description of the exhibit
-      color: "#ff4629",
-      textColor: "white",
+      title: "Ocean Depths",
+      description: "Colors beneath the sea",
+      color: "#d9351c", // Changed from #ff4629 to improve contrast with white text
+      textColor: "#FFFFFF",
       imageUrl: "images/exhibit1.webp",
     },
     {
       title: "Color Through Time",
       description: "A journey through color in history",
-      color: "#98CDB2",
-      textColor: "#1414FF",
+      color: "#98CDB2", // Kept original color
+      textColor: "#0C0C7A", // Changed from #1414FF for improved contrast
       imageUrl: "images/exhibit2.webp",
     },
     {
       title: "Northern Spectrum",
       description: "The magic of the North",
-      color: "#001f97",
-      textColor: "#98CDB2",
+      color: "#001f97", // Kept original color
+      textColor: "#FFFFFF", // Changed from #98CDB2 for better contrast
       imageUrl: "images/exhibit3.webp",
     },
     {
       title: "Tradition Hues",
       description: "The meaning of color in global traditions",
-      color: "#ffb9ff",
-      textColor: "#8C550F",
+      color: "#ffb9ff", // Kept original color
+      textColor: "#573800", // Changed from #8C550F for improved contrast
       imageUrl: "images/exhibit4.webp",
     },
     {
       title: "Urban Canvas",
       description: "How cities use color in design",
-      color: "#8c550f",
-      textColor: "#FFB9FF",
+      color: "#8c550f", // Kept original color
+      textColor: "#FFFFFF", // Changed from #FFB9FF for improved contrast
       imageUrl: "images/exhibit5.webp",
     },
     {
       title: "Nature’s Palette",
       description: "Colors in nature",
-      color: "#fffa00",
-      textColor: "#5A6950",
+      color: "#e5e500", // Changed from #fffa00 for improved contrast with dark text
+      textColor: "#3A4431", // Changed from #5A6950 for improved contrast
       imageUrl: "images/exhibit6.webp",
     },
   ];
